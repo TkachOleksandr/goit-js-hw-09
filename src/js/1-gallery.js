@@ -67,8 +67,8 @@ const images = [
   ];
   const gallery = document.querySelector('.gallery');
 
-  const markup = data.map(({ preview, original, description }) => {
-    return `<li class="gallery-item hvr-grow">
+  const markup = data.map(({ preview, original, description }) =>
+     `<li class="gallery-item hvr-grow">
     <a class="gallery-link " href="${original}">
       <img
         class="gallery-image"
@@ -76,8 +76,8 @@ const images = [
         alt="${description}"
       />
     </a>
-  </li>`;
-  });
+  </li>`
+).join('');
   
   gallery.insertAdjacentHTML('beforeend', markup.join(''));
   
