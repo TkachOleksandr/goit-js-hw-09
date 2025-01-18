@@ -82,33 +82,6 @@ const images = [
       </a>
     </li>`
 ).join('');
-   function onClickOpenImg(event) {
-      event.preventDefault();
-  
-      const { target } = event;
-
-  
-      if (target.nodeName !== "IMG") {
-          return;
-      }
-  
-      const instance = basicLightbox.create(
-          `<img src="${target.dataset.source}" alt="${target.alt}" width="1280">`
-      )
-      instance.show();
-  
-      const keyPress = event => {
-          if (event.code === 'Escape') {
-              instance.close();
-              document.removeEventListener('keydown', keyPress);
-          }
-      };
-  
-      if (instance.show()) {
-          document.addEventListener('keydown', keyPress);
-      }
-  
-  }
   gallery.insertAdjacentHTML('beforeend', imgItmes.join(''));
   function onClickOpenImg(event) {
     event.preventDefault();
