@@ -65,21 +65,25 @@ const images = [
       description: 'Lighthouse Coast Sea',
     },
   ];
+  
   const gallery = document.querySelector('.gallery');
 
-  const markup = data.map(({ preview, original, description }) =>
-     `<li class="gallery-item hvr-grow">
-    <a class="gallery-link " href="${original}">
-      <img
-        class="gallery-image"
-        src="${preview}"
-        alt="${description}"
-      />
-    </a>
-  </li>`
+  gallery.addEventListener('click', onClickOpenImg);
+  
+  const imgItems = images.map(({ preview, original, description }) =>
+     `
+    <li class="gallery-item hvr-grow">
+      <a class="gallery-link " href="${original}">
+        <img
+          class="gallery-image"
+          src="${preview}"
+          alt="${description}"
+        />
+      </a>
+    </li>`
 ).join('');
   
-  gallery.insertAdjacentHTML('beforeend', markup.join(''));
+  gallery.insertAdjacentHTML('beforeend', imgItmes.join(''));
   
   new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
