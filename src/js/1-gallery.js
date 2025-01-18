@@ -1,10 +1,10 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import data from './data';
+import link from './link';
 
 const gallery = document.querySelector('.gallery');
 
-const markup = data.map(({ preview, original, description }) => {
+const markup = link.map(({ preview, original, description }) => {
   return `<li class="gallery-item hvr-grow">
   <a class="gallery-link " href="${original}">
     <img
